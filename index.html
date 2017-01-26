@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Sandwich Maker</title>
+</head>
+<body>
+	<h1>Sandwich Maker</h1>
+	<h5>Please select from the bread:</h5>
+	<select multiple id="breadSelect">
+		<option name="bread" value="noBread" > No Bread 
+		<option name="bread" value="wheat"> Wheat 
+		<option name="bread" value="white"> White 
+		<option name="bread" value="sourdough"> Sourdough 
+		<option name="bread" value="pumpernickel"> Pumpernickel 
+	</select>
+	<br>
+	<h5>Please select from the meat:</h5>
+	<select multiple id="meatSelect">
+		<option name="meat" value="noMeat" > No Meat 
+		<option name="meat" value="ham"> Ham 
+		<option name="meat" value="turkey"> Turkey 
+		<option name="meat" value="chickenBreast"> Chicken Breast 
+		<option name="meat" value="salami"> Salami 
+	</select>
+	<br>
+	<h5>Please select from the cheese:</h5>
+	<select multiple id="cheeseSelect">
+		<option name="cheese" value="noCheese" > No Cheese 
+		<option name="cheese" value="cheddar"> Cheddar 
+		<option name="cheese" value="swiss"> Swiss 
+		<option name="cheese" value="montereyJack"> Monterey Jack 
+		<option name="cheese" value="provolone"> Provolone 
+	</select>
+	<br>
+	<h5>Please select from the vegetables:<h5>
+	<select multiple id="vegetableSelect">
+		<option name="vegetable" value="noVegetable" > No Vegetable 
+		<option name="vegetable" value="tomato"> Tomato 
+		<option name="vegetable" value="lettuce"> Lettuce 
+		<option name="vegetable" value="onion"> Onion 
+		<option name="vegetable" value="greenPepper"> Green Pepper 
+	</select>
+	<br>
+	<h5>Please select from the condiments:<h5>
+	<select multiple id="condimentSelect">
+		<option name="condiment" value="noCondiment" > No Condiments 
+		<option name="condiment" value="mustard"> Mustard 
+		<option name="condiment" value="mayonnaise"> Mayonnaise 
+		<option name="condiment" value="vinegarAndOil"> Vinegar and Oil 
+		<option name="condiment" value="saltAndPepper"> Salt and Pepper 
+	</select>
+	<br>
+	<button id="submit">Submit Order</button>
+	<h3>Sandwich</h3>
+	Price: $ <input type="text" placeholder="0.00">
+	<script type="text/javascript" src="javascripts/sandwichMaker.js"></script>
+	<script type="text/javascript" src="javascripts/bread.js"></script>
+	<script type="text/javascript" src="javascripts/meat.js"></script>
+	<script type="text/javascript" src="javascripts/cheese.js"></script>
+	<script type="text/javascript" src="javascripts/main.js"></script>
+</body>
+</html>
