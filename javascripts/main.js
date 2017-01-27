@@ -1,24 +1,10 @@
 console.log("Main Connected");
 
-
-// // Variable to hold the final price. Default to 0.
-// var finalSandwichPrice = 0;
+var finalSandwichPrice = 0;
 
 // // Variable to hold topping that the user selects
 // var selectedTopping;
 
-// // Get a reference to the <select> element that has all the meat options
-// var meatChooser = document.getElementById("meat-chooser");
-
- 
-//   A <select> element broadcasts a change event, so you listen for it
-//   and get the value of the topping from your augmented IIFE
-
-// meatChooser.addEventListener("change", function(event) {
-//   // Get the value chosen from the DOM
-//   selectedTopping = event.target.value;
-
-//   // Determine the price of the topping chosen
 
 //   // Add the topping to the SandwichMaker to increase the total price
 // });
@@ -29,6 +15,7 @@ var cheeseSelect = document.getElementById("cheeseSelect");
 var vegetableSelect = document.getElementById("vegetableSelect");
 var condimentSelect = document.getElementById("condimentSelect");
 var button = document.getElementById("submit");
+var toppingPrice = 0;
 
 // meatSelect.addEventListener("change", function(event) {
 // 	console.log("Meat Change")
@@ -84,17 +71,40 @@ button.addEventListener("click", function(event) {
 		meatCost += SandwichMaker.addMeat(meatArray[i]);
 	}
 	console.log("Meat Cost", meatCost);
+	SandwichMaker.addTopping(meatCost);
 	var breadCost = 0;
 	for (var i = 0; i < breadArray.length; i++) {
 		breadCost += SandwichMaker.addBread(breadArray[i]);
 	}
 	console.log("Bread Cost", breadCost);
+	SandwichMaker.addTopping(breadCost);
 	var cheeseCost = 0;
 	for (var i = 0; i < cheeseArray.length; i++) {
 		cheeseCost += SandwichMaker.addCheese(cheeseArray[i]);
 	}
 	console.log("Cheese Cost", cheeseCost);
+	SandwichMaker.addTopping(cheeseCost);
+	var condimentCost = 0;
+	for (var i = 0; i < condimentArray.length; i++) {
+		condimentCost += SandwichMaker.addCondiment(condimentArray[i]);
+	}
+	console.log("Condiment Cost", condimentCost);
+	SandwichMaker.addTopping(condimentCost);
+	var vegetableCost = 0;
+	for (var i = 0; i < vegetableArray.length; i++) {
+		vegetableCost += SandwichMaker.addVegetable(vegetableArray[i]);
+	}
+	SandwichMaker.addTopping(vegetableCost)
+	console.log("Vegetable Cost", vegetableCost);
+
+	toppingPrice = meatCost + breadCost + cheeseCost + condimentCost + vegetableCost;
+	console.log("Sandwich Price", toppingPrice);
+	
+	var returnedPrice = SandwichMaker.pricePlease();
+	document.getElementById("output").value = returnedPrice;
 });
+
+
 
 
 
